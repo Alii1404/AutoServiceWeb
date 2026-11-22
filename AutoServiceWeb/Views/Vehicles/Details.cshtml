@@ -1,0 +1,27 @@
+﻿@model AutoServiceWeb.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Avtomobil məlumatları";
+}
+
+<div class="container mt-4">
+    <h2>Avtomobil məlumatları</h2>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <h4>@Model.Brand @Model.Model</h4>
+            <hr />
+
+            <p><strong>Marka:</strong> @Model.Brand</p>
+            <p><strong>Model:</strong> @Model.Model</p>
+            <p><strong>İstehsal ili:</strong> @Model.Year</p>
+            <p><strong>Dövlət nömrəsi:</strong> @Model.LicensePlate</p>
+            <p><strong>Müştərinin adı:</strong> @Model.CustomerName</p>
+            <p><strong>Telefon:</strong> @Model.Phone</p>
+            <p><strong>Rəng:</strong> @Model.Color</p>
+
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Redaktə et</a>
+            <a asp-action="Index" class="btn btn-secondary">Geri qayıt</a>
+        </div>
+    </div>
+</div>

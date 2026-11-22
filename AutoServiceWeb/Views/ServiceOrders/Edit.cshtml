@@ -1,0 +1,53 @@
+﻿@model AutoServiceWeb.Models.ServiceOrder
+
+@{
+    ViewData["Title"] = "Sifarişi redaktə et";
+}
+
+<div class="container mt-4">
+    <h2>Servis sifarişini redaktə et</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label class="form-label">Avtomobil</label>
+            <select asp-for="VehicleId" asp-items="ViewBag.VehicleId" class="form-select">
+                <option value="">Avtomobil seçin</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ServiceType" class="form-label">Xidmət növü</label>
+            <input asp-for="ServiceType" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ProblemDescription" class="form-label">Problem təsviri</label>
+            <textarea asp-for="ProblemDescription" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Qiymət (AZN)</label>
+            <input asp-for="Price" type="number" step="0.01" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Date" class="form-label">Tarix</label>
+            <input asp-for="Date" type="date" class="form-control"
+                   value="@Model.Date.ToString("yyyy-MM-dd")" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Status" class="form-label">Status</label>
+            <select asp-for="Status" class="form-select">
+                <option value="Yeni">Yeni</option>
+                <option value="İcradadır">İcradadır</option>
+                <option value="Hazırdır">Hazırdır</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Dəyişiklikləri yadda saxla</button>
+        <a asp-action="Index" class="btn btn-secondary">Geri</a>
+    </form>
+</div>

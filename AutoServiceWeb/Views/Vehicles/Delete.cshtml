@@ -1,0 +1,27 @@
+﻿@model AutoServiceWeb.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Avtomobili sil";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2>Avtomobili sil</h2>
+
+            <p>Bu avtomobili silmək istədiyinizə əminsiniz?</p>
+
+            <h5>@Model.Brand @Model.Model</h5>
+
+            <p><strong>Dövlət nömrəsi:</strong> @Model.LicensePlate</p>
+            <p><strong>Müştəri:</strong> @Model.CustomerName</p>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">Bəli, sil</button>
+                <a asp-action="Index" class="btn btn-secondary">Ləğv et</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "AutoService";
+}
+
+<div class="container mt-5">
+
+    <div class="p-5 mb-4 bg-dark text-white rounded-3">
+        <h1 class="display-5 fw-bold">AutoService</h1>
+        <p class="fs-5">Avtomobil Servis İdarəetmə Sisteminə xoş gəlmisiniz!</p>
+        <a asp-controller="Vehicles" asp-action="Index" class="btn btn-warning btn-lg">
+            Avtomobillərə bax
+        </a>
+    </div>
+
+    <h3 class="mb-4">Ümumi statistika</h3>
+
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body">
+                    <h5>Avtomobillər</h5>
+                    <h2>@ViewBag.VehicleCount</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body">
+                    <h5>Bütün sifarişlər</h5>
+                    <h2>@ViewBag.OrderCount</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-dark bg-warning shadow">
+                <div class="card-body">
+                    <h5>Yeni sifarişlər</h5>
+                    <h2>@ViewBag.NewOrders</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-secondary shadow">
+                <div class="card-body">
+                    <h5>Hazır sifarişlər</h5>
+                    <h2>@ViewBag.CompletedOrders</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5 g-3">
+        <div class="col-md-6">
+            <a asp-controller="Vehicles" asp-action="Index" class="btn btn-outline-primary w-100 p-3">
+                Avtomobillərin idarə edilməsi
+            </a>
+        </div>
+
+        <div class="col-md-6">
+            <a asp-controller="ServiceOrders" asp-action="Index" class="btn btn-outline-success w-100 p-3">
+                Servis sifarişlərinin idarə edilməsi
+            </a>
+        </div>
+    </div>
+
+</div>

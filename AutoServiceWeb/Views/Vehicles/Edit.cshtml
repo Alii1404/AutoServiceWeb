@@ -1,0 +1,59 @@
+﻿@model AutoServiceWeb.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Avtomobili redaktə et";
+}
+
+<div class="container mt-4">
+    <h2>Avtomobili redaktə et</h2>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="Brand" class="form-label">Marka</label>
+            <input asp-for="Brand" class="form-control" />
+            <span asp-validation-for="Brand" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Model" class="form-label">Model</label>
+            <input asp-for="Model" class="form-control" />
+            <span asp-validation-for="Model" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Year" class="form-label">İstehsal ili</label>
+            <input asp-for="Year" type="number" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LicensePlate" class="form-label">Dövlət nömrəsi</label>
+            <input asp-for="LicensePlate" class="form-control" />
+            <span asp-validation-for="LicensePlate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CustomerName" class="form-label">Müştərinin adı</label>
+            <input asp-for="CustomerName" class="form-control" />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label">Telefon</label>
+            <input asp-for="Phone" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Color" class="form-label">Rəng</label>
+            <input asp-for="Color" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Dəyişiklikləri yadda saxla</button>
+        <a asp-action="Index" class="btn btn-secondary">Geri</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

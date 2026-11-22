@@ -1,0 +1,29 @@
+﻿@model AutoServiceWeb.Models.ServiceOrder
+
+@{
+    ViewData["Title"] = "Sifarişi sil";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2>Sifarişi sil</h2>
+
+            <p>Bu servis sifarişini silmək istədiyinizə əminsiniz?</p>
+
+            <hr />
+
+            <p><strong>Avtomobil:</strong> @Model.Vehicle?.Brand @Model.Vehicle?.Model</p>
+            <p><strong>Xidmət:</strong> @Model.ServiceType</p>
+            <p><strong>Qiymət:</strong> @Model.Price AZN</p>
+            <p><strong>Status:</strong> @Model.Status</p>
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">Bəli, sil</button>
+                <a asp-action="Index" class="btn btn-secondary">Ləğv et</a>
+            </form>
+        </div>
+    </div>
+</div>
